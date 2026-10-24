@@ -1,0 +1,525 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>科研汇报 · 空白版式模板</title><!-- 布局均匀：共享栅格、等宽等高、分层间距、统一图注基线；业务内容保持空白。 -->
+<style>*{box-sizing:border-box} :root{--blue:#003399;--red:#c00000;--pale:#eaf2ff;--border:#c6d7f3;--muted:#55739c;--gap:24px;--summary-gap:16px;--panel-top:calc(64px + var(--summary-gap));--panel-height:480px;--panel-title:56px;--pad-y:12px;--pad-x:16px;--inner-gap:12px;--caption-height:60px;--scale:1}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#e2e7ef;color:var(--blue);font-family:"Times New Roman","Microsoft YaHei",serif;font-weight:700}.deck{position:absolute;left:50%;top:calc(50% - 22px);width:1280px;height:720px;transform:translate(-50%,-50%) scale(var(--scale))}.slide{position:absolute;inset:0;background:white;display:none;overflow:hidden}.slide.active{display:block}h1,h2,h3,p,figure{margin:0}.header{position:absolute;left:28px;right:24px;top:8px;height:76px;display:flex;align-items:flex-start;gap:24px;border-bottom:3px solid var(--blue)}.section{width:120px;height:62px;background:var(--blue);clip-path:polygon(15% 0,100% 0,85% 100%,0 100%);color:#fff;text-align:center;font-size:37px;line-height:56px;flex:none}.header h2{font-size:37px;line-height:56px;flex:1;min-width:0;white-space:nowrap}.red{color:var(--red)}.pagination{font-size:29px;line-height:56px;padding-left:22px;border-left:1px solid var(--border);white-space:nowrap}.pagination small{font-size:26px;color:var(--muted);font-weight:400}.body{position:absolute;left:34px;top:112px;width:1212px;height:580px}.banner{height:64px;border-radius:12px;background:var(--blue);color:white;display:flex;align-items:center;justify-content:center;padding:8px 20px;font-size:28px;text-align:center}.panels{position:absolute;top:var(--panel-top);width:100%;height:var(--panel-height);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--gap)}.panel{border:1px solid var(--border);border-radius:12px;overflow:hidden;background:#fff;min-width:0;display:flex;flex-direction:column}.panel h3{height:var(--panel-title);flex:none;background:var(--pale);font-size:28px;display:flex;align-items:center;justify-content:center;padding:4px 12px}.inner{padding:var(--pad-y) var(--pad-x);flex:1;min-height:0;display:grid;grid-template-rows:minmax(0,1fr) var(--caption-height);gap:var(--inner-gap)}.visual{flex:1;min-height:0;border:1px dashed var(--border);border-radius:6px;display:flex;align-items:center;justify-content:center}.visual img{width:100%;height:100%;object-fit:contain;min-height:0}.visual.filled{border:0}figcaption{height:var(--caption-height);flex:none;display:flex;align-items:center;justify-content:center;text-align:center;font-size:26px;line-height:30px}.results .panels,.overview .panels{grid-template-columns:repeat(3,minmax(0,1fr))}.problem .panels{top:0;height:580px}.problem .banner{display:none}.evidence .panels{grid-template-columns:1fr}.evidence .panel h3{display:none}.method .panels{grid-template-columns:1fr 38px 1fr 38px 1fr;align-items:center}.method .panel{height:var(--panel-height)}.arrow{font-size:40px;text-align:center}.plan .panels{grid-template-columns:1fr;grid-template-rows:repeat(3,1fr)}.plan .panel{flex-direction:row}.plan .panel h3{width:280px;height:100%;flex:none}.plan .inner{grid-template-rows:minmax(0,1fr);grid-template-columns:minmax(0,1fr)}.plan .visual{display:none}.plan figcaption{height:100%;width:100%}.cover h1{position:absolute;left:60px;right:60px;top:190px;height:115px;background:var(--blue);color:#fff;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:56px;padding:16px 24px}.cover .presenter{position:absolute;top:380px;width:100%;text-align:center;font-size:37px}.cover .institution{position:absolute;top:475px;width:100%;text-align:center;font-size:37px}.cover .date{position:absolute;right:60px;top:40px;font-size:25px}.wave{position:absolute;bottom:0;width:100%;height:155px}.agenda .side{position:absolute;inset:0 auto 0 0;width:548px;background:#193b8f;display:flex;align-items:center;justify-content:center;color:#fff;font-size:56px}.agenda .rows{position:absolute;left:580px;right:40px;top:160px;display:grid;gap:24px}.agenda .row{height:104px;border-radius:12px;background:var(--pale);display:flex;align-items:center;gap:24px;padding:16px 24px;font-size:40px}.num{background:var(--blue);color:#fff;width:64px;height:64px;line-height:64px;text-align:center;flex:none}.ending h1{position:absolute;top:264px;width:100%;text-align:center;color:var(--red);font-size:64px}.ending .rule{position:absolute;left:118px;right:118px;top:364px;height:5px;background:var(--blue)}.ending p{position:absolute;top:394px;width:100%;text-align:center;font-size:40px}nav{position:fixed;bottom:8px;left:50%;transform:translateX(-50%);display:flex;gap:10px;align-items:center;font:15px "Microsoft YaHei",sans-serif;white-space:nowrap}button,select{font:inherit;padding:6px 12px;border:1px solid #c6d7f3;background:#fff;border-radius:6px;color:#003399}button:focus-visible,select:focus-visible{outline:2px solid #c00000}.balanced-stack{height:100%;min-height:0;display:grid;grid-auto-rows:minmax(0,1fr);gap:var(--inner-gap)}.balanced-flow{height:100%;min-height:0;display:flex;flex-direction:column;justify-content:space-evenly;gap:var(--inner-gap)}.content-group{min-width:0;min-height:0;display:flex;flex-direction:column;justify-content:center;gap:8px}@media print{@page{size:13.333333in 7.5in;margin:0}html,body{height:auto;overflow:visible;background:white;print-color-adjust:exact;-webkit-print-color-adjust:exact}.deck{position:static;transform:none;height:auto}.slide{position:relative;display:block;width:1280px;height:720px;break-after:page}.slide:last-child{break-after:auto}nav{display:none}}</style></head><body><main class="deck"></main><nav aria-label="模板预览控制"><button id="prev" aria-label="上一页">←</button><select aria-label="选择版式"></select><button id="next" aria-label="下一页">→</button><span>← → 翻页 · Home / End 首尾</span></nav><script type="application/json" id="deck-data">{
+  "meta": {
+    "title": "",
+    "presenter": "",
+    "institution": "",
+    "date": ""
+  },
+  "entities": {
+    "topic": {
+      "name": "",
+      "symbol": "",
+      "unit": "",
+      "color": "",
+      "status": ""
+    },
+    "a": {
+      "name": "",
+      "symbol": "",
+      "unit": "",
+      "color": "",
+      "status": ""
+    },
+    "b": {
+      "name": "",
+      "symbol": "",
+      "unit": "",
+      "color": "",
+      "status": ""
+    },
+    "c": {
+      "name": "",
+      "symbol": "",
+      "unit": "",
+      "color": "",
+      "status": ""
+    }
+  },
+  "claims": {
+    "s01-summary": {
+      "text": "",
+      "evidence": "",
+      "scope": ""
+    },
+    "s01-caption-1": {
+      "text": "",
+      "evidence": "",
+      "scope": ""
+    },
+    "s01-caption-2": {
+      "text": "",
+      "evidence": "",
+      "scope": ""
+    },
+    "s01-caption-3": {
+      "text": "",
+      "evidence": "",
+      "scope": ""
+    },
+    "s02-summary": {
+      "text": "",
+      "evidence": "",
+      "scope": ""
+    },
+    "s02-caption-1": {
+      "text": "",
+      "evidence": "",
+      "scope": ""
+    },
+    "s02-caption-2": {
+      "text": "",
+      "evidence": "",
+      "scope": ""
+    },
+    "s02-caption-3": {
+      "text": "",
+      "evidence": "",
+      "scope": ""
+    },
+    "s03-summary": {
+      "text": "",
+      "evidence": "",
+      "scope": ""
+    },
+    "s03-caption-1": {
+      "text": "",
+      "evidence": "",
+      "scope": ""
+    },
+    "s03-caption-2": {
+      "text": "",
+      "evidence": "",
+      "scope": ""
+    },
+    "s03-caption-3": {
+      "text": "",
+      "evidence": "",
+      "scope": ""
+    },
+    "s04-summary": {
+      "text": "",
+      "evidence": "",
+      "scope": ""
+    },
+    "s04-caption-1": {
+      "text": "",
+      "evidence": "",
+      "scope": ""
+    },
+    "s04-caption-2": {
+      "text": "",
+      "evidence": "",
+      "scope": ""
+    },
+    "s05-summary": {
+      "text": "",
+      "evidence": "",
+      "scope": ""
+    },
+    "s05-caption-1": {
+      "text": "",
+      "evidence": "",
+      "scope": ""
+    },
+    "s05-caption-2": {
+      "text": "",
+      "evidence": "",
+      "scope": ""
+    },
+    "s05-caption-3": {
+      "text": "",
+      "evidence": "",
+      "scope": ""
+    },
+    "s06-summary": {
+      "text": "",
+      "evidence": "",
+      "scope": ""
+    },
+    "s06-caption-1": {
+      "text": "",
+      "evidence": "",
+      "scope": ""
+    },
+    "s06-caption-2": {
+      "text": "",
+      "evidence": "",
+      "scope": ""
+    },
+    "s07-summary": {
+      "text": "",
+      "evidence": "",
+      "scope": ""
+    },
+    "s07-caption-1": {
+      "text": "",
+      "evidence": "",
+      "scope": ""
+    },
+    "s07-caption-2": {
+      "text": "",
+      "evidence": "",
+      "scope": ""
+    },
+    "s07-caption-3": {
+      "text": "",
+      "evidence": "",
+      "scope": ""
+    },
+    "s08-summary": {
+      "text": "",
+      "evidence": "",
+      "scope": ""
+    },
+    "s08-caption-1": {
+      "text": "",
+      "evidence": "",
+      "scope": ""
+    },
+    "s08-caption-2": {
+      "text": "",
+      "evidence": "",
+      "scope": ""
+    },
+    "s08-caption-3": {
+      "text": "",
+      "evidence": "",
+      "scope": ""
+    },
+    "s09-summary": {
+      "text": "",
+      "evidence": "",
+      "scope": ""
+    },
+    "s09-caption-1": {
+      "text": "",
+      "evidence": "",
+      "scope": ""
+    },
+    "s09-caption-2": {
+      "text": "",
+      "evidence": "",
+      "scope": ""
+    },
+    "s09-caption-3": {
+      "text": "",
+      "evidence": "",
+      "scope": ""
+    },
+    "s10-summary": {
+      "text": "",
+      "evidence": "",
+      "scope": ""
+    },
+    "s10-caption-1": {
+      "text": "",
+      "evidence": "",
+      "scope": ""
+    },
+    "s10-caption-2": {
+      "text": "",
+      "evidence": "",
+      "scope": ""
+    },
+    "s10-caption-3": {
+      "text": "",
+      "evidence": "",
+      "scope": ""
+    }
+  },
+  "slides": [
+    {
+      "id": "s01",
+      "layout": "cover",
+      "group": "main",
+      "subject": "topic",
+      "subtitle": "",
+      "claim": "s01-summary",
+      "items": [
+        {
+          "entity": "a",
+          "claim": "s01-caption-1",
+          "src": "",
+          "alt": ""
+        },
+        {
+          "entity": "b",
+          "claim": "s01-caption-2",
+          "src": "",
+          "alt": ""
+        },
+        {
+          "entity": "c",
+          "claim": "s01-caption-3",
+          "src": "",
+          "alt": ""
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "s02",
+      "layout": "agenda",
+      "group": "main",
+      "subject": "topic",
+      "subtitle": "",
+      "claim": "s02-summary",
+      "items": [
+        {
+          "entity": "a",
+          "claim": "s02-caption-1",
+          "src": "",
+          "alt": ""
+        },
+        {
+          "entity": "b",
+          "claim": "s02-caption-2",
+          "src": "",
+          "alt": ""
+        },
+        {
+          "entity": "c",
+          "claim": "s02-caption-3",
+          "src": "",
+          "alt": ""
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "s03",
+      "layout": "overview",
+      "group": "main",
+      "subject": "topic",
+      "subtitle": "",
+      "claim": "s03-summary",
+      "items": [
+        {
+          "entity": "a",
+          "claim": "s03-caption-1",
+          "src": "",
+          "alt": ""
+        },
+        {
+          "entity": "b",
+          "claim": "s03-caption-2",
+          "src": "",
+          "alt": ""
+        },
+        {
+          "entity": "c",
+          "claim": "s03-caption-3",
+          "src": "",
+          "alt": ""
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "s04",
+      "layout": "problem",
+      "group": "main",
+      "subject": "topic",
+      "subtitle": "",
+      "claim": "s04-summary",
+      "items": [
+        {
+          "entity": "a",
+          "claim": "s04-caption-1",
+          "src": "",
+          "alt": ""
+        },
+        {
+          "entity": "b",
+          "claim": "s04-caption-2",
+          "src": "",
+          "alt": ""
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "s05",
+      "layout": "method",
+      "group": "main",
+      "subject": "topic",
+      "subtitle": "",
+      "claim": "s05-summary",
+      "items": [
+        {
+          "entity": "a",
+          "claim": "s05-caption-1",
+          "src": "",
+          "alt": ""
+        },
+        {
+          "entity": "b",
+          "claim": "s05-caption-2",
+          "src": "",
+          "alt": ""
+        },
+        {
+          "entity": "c",
+          "claim": "s05-caption-3",
+          "src": "",
+          "alt": ""
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "s06",
+      "layout": "compare",
+      "group": "main",
+      "subject": "topic",
+      "subtitle": "",
+      "claim": "s06-summary",
+      "items": [
+        {
+          "entity": "a",
+          "claim": "s06-caption-1",
+          "src": "",
+          "alt": ""
+        },
+        {
+          "entity": "b",
+          "claim": "s06-caption-2",
+          "src": "",
+          "alt": ""
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "s07",
+      "layout": "results",
+      "group": "main",
+      "subject": "topic",
+      "subtitle": "",
+      "claim": "s07-summary",
+      "items": [
+        {
+          "entity": "a",
+          "claim": "s07-caption-1",
+          "src": "",
+          "alt": ""
+        },
+        {
+          "entity": "b",
+          "claim": "s07-caption-2",
+          "src": "",
+          "alt": ""
+        },
+        {
+          "entity": "c",
+          "claim": "s07-caption-3",
+          "src": "",
+          "alt": ""
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "s08",
+      "layout": "evidence",
+      "group": "main",
+      "subject": "topic",
+      "subtitle": "",
+      "claim": "s08-summary",
+      "items": [
+        {
+          "entity": "a",
+          "claim": "s08-caption-1",
+          "src": "",
+          "alt": ""
+        },
+        {
+          "entity": "b",
+          "claim": "s08-caption-2",
+          "src": "",
+          "alt": ""
+        },
+        {
+          "entity": "c",
+          "claim": "s08-caption-3",
+          "src": "",
+          "alt": ""
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "s09",
+      "layout": "plan",
+      "group": "main",
+      "subject": "topic",
+      "subtitle": "",
+      "claim": "s09-summary",
+      "items": [
+        {
+          "entity": "a",
+          "claim": "s09-caption-1",
+          "src": "",
+          "alt": ""
+        },
+        {
+          "entity": "b",
+          "claim": "s09-caption-2",
+          "src": "",
+          "alt": ""
+        },
+        {
+          "entity": "c",
+          "claim": "s09-caption-3",
+          "src": "",
+          "alt": ""
+        }
+      ],
+      "notes": ""
+    },
+    {
+      "id": "s10",
+      "layout": "ending",
+      "group": "main",
+      "subject": "topic",
+      "subtitle": "",
+      "claim": "s10-summary",
+      "items": [
+        {
+          "entity": "a",
+          "claim": "s10-caption-1",
+          "src": "",
+          "alt": ""
+        },
+        {
+          "entity": "b",
+          "claim": "s10-caption-2",
+          "src": "",
+          "alt": ""
+        },
+        {
+          "entity": "c",
+          "claim": "s10-caption-3",
+          "src": "",
+          "alt": ""
+        }
+      ],
+      "notes": ""
+    }
+  ]
+}</script><script>const D=JSON.parse(document.getElementById('deck-data').textContent);const labels={"cover": "封面", "agenda": "目录", "overview": "目标总览", "problem": "问题分析", "method": "机制流程", "compare": "双图比较", "results": "三图结果", "evidence": "整宽证据", "plan": "后续计划", "ending": "结束"};const deck=document.querySelector('.deck');
+function el(tag,cls,text){const n=document.createElement(tag);if(cls)n.className=cls;if(text)n.textContent=text;return n}
+function entity(id){if(!D.entities[id])throw Error('Unknown entity '+id);return D.entities[id]}
+function claim(id){if(!id)return '';if(!D.claims[id])throw Error('Unknown claim '+id);return D.claims[id].text}
+function panel(item){const n=el('figure','panel');n.append(el('h3','',entity(item.entity).name));const inner=el('div','inner');const v=el('div','visual');if(item.src){const img=el('img');img.src=item.src;img.alt=item.alt;v.classList.add('filled');v.append(img)}inner.append(v,el('figcaption','',claim(item.claim)));n.append(inner);return n}
+D.slides.forEach((s,i)=>{const n=el('section','slide '+s.layout);n.id=s.id;n.dataset.slideId=s.id;n.setAttribute('aria-label',labels[s.layout]);
+if(s.layout==='cover'){n.append(el('h1','',D.meta.title),el('p','presenter',D.meta.presenter),el('p','institution',D.meta.institution),el('p','date',D.meta.date));const wave=document.createElementNS('http://www.w3.org/2000/svg','svg');wave.setAttribute('viewBox','0 0 1280 155');wave.classList.add('wave');const path=document.createElementNS(wave.namespaceURI,'path');path.setAttribute('d','M0 95 Q390 180 750 80 T1280 50 L1280 155 L0 155Z');path.setAttribute('fill','#003399');wave.append(path);n.append(wave)}
+else if(s.layout==='agenda'){n.append(el('div','side',entity(s.subject).name));const rows=el('div','rows');s.items.forEach((x,j)=>{const row=el('div','row');row.append(el('span','num',String(j+1).padStart(2,'0')),el('span','',entity(x.entity).name));rows.append(row)});n.append(rows)}
+else if(s.layout==='ending'){n.append(el('h1','',claim(s.claim)),el('div','rule'),el('p','',D.meta.institution))}
+else{const header=el('header','header');const group=D.slides.filter(x=>x.group===s.group);const pos=group.indexOf(s)+1;header.append(el('div','section',String(pos).padStart(2,'0')));const title=el('h2','',entity(s.subject).name);title.append(el('span','red',s.subtitle?'：'+s.subtitle:''));const page=el('div','pagination',String(pos));page.append(el('small','',' / '+group.length));header.append(title,page);const body=el('div','body');body.append(el('div','banner',claim(s.claim)));const panels=el('div','panels');const items=s.layout==='evidence'?s.items.slice(0,1):s.items;items.forEach((x,j)=>{if(s.layout==='method'&&j)panels.append(el('div','arrow','→'));panels.append(panel(x))});body.append(panels);n.append(header,body)}deck.append(n)});
+const slides=[...deck.children],select=document.querySelector('select');D.slides.forEach((s,i)=>{const o=el('option','',`${i+1} · ${labels[s.layout]}`);o.value=s.id;select.append(o)});let index=0;
+function show(i){index=Math.max(0,Math.min(slides.length-1,i));slides.forEach((s,j)=>{s.classList.toggle('active',j===index);s.setAttribute('aria-hidden',String(j!==index))});select.value=slides[index].id;history.replaceState(null,'','#'+slides[index].id)}
+function fromHash(){const i=slides.findIndex(s=>s.id===location.hash.slice(1));show(i<0?0:i)}
+function fit(){document.documentElement.style.setProperty('--scale',Math.min(innerWidth/1280,(innerHeight-50)/720))}document.querySelector('#prev').onclick=()=>show(index-1);document.querySelector('#next').onclick=()=>show(index+1);select.onchange=()=>show(slides.findIndex(s=>s.id===select.value));addEventListener('keydown',e=>{if(e.target.matches('select,input,textarea'))return;if(['ArrowRight','PageDown',' '].includes(e.key)){e.preventDefault();show(index+1)}if(['ArrowLeft','PageUp'].includes(e.key)){e.preventDefault();show(index-1)}if(e.key==='Home')show(0);if(e.key==='End')show(slides.length-1)});addEventListener('resize',fit);addEventListener('hashchange',fromHash);fit();fromHash();</script></body></html>

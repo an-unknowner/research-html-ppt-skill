@@ -1,0 +1,6 @@
+interface:
+  display_name: "PPT 制作与模板切换"
+  short_description: "支持多模板的演示制作、均匀布局、图像表达与跨页内容同步"
+  default_prompt: "使用 $research-html-ppt 根据提供的内容和模板制作演示文稿，并检查布局与跨页一致性。"
+policy:
+  allow_implicit_invocation: true
